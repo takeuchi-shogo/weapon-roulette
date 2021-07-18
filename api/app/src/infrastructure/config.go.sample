@@ -1,4 +1,4 @@
-package infrastrcture
+package infrastructure
 
 type Config struct {
 	DB struct {
@@ -17,10 +17,10 @@ type Config struct {
 func NewConfig() *Config {
 	c := new(Config)
 
-	c.DB.Production.Host = "localhost"
-	c.DB.Production.UserName = "root"
-	c.DB.Production.Password = "pass"
-	c.DB.Production.DBName = "weapon_roulette"
+	c.DB.Production.Host = "Your Host"
+	c.DB.Production.UserName = "user name"
+	c.DB.Production.Password = "password"
+	c.DB.Production.DBName = "DB name"
 
 	c.Routing.Port = "8080"
 

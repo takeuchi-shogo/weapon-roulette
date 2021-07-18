@@ -4,8 +4,8 @@ import
 
 
 func main() {
-	db := infrastrcture.NewDB()
+	db := infrastructure.NewDB()
 
-	r := infrastrcture.NewRouting()
+	r := infrastructure.NewRouting()
 	r.Run(r.Port)
 }
