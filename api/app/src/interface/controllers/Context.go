@@ -1,4 +1,6 @@
 package controllers
 
-type Context struct {
+type Context interface {
+	Query(key string) string
+	JSON(code int, obj interface{})
 }

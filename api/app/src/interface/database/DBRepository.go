@@ -6,7 +6,6 @@ type DBRepository struct {
 	DB DB
 }
 
-
 func (db *DBRepository) Connect() *gorm.DB {
-	return db..DB.Connect()
+	return db.DB.Connect()
 }
