@@ -1,4 +1,4 @@
-package infrastrcture
+package infrastructure
 
 import (
 	"github.com/jinzhu/gorm"

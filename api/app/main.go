@@ -1,11 +1,10 @@
 package main
 
-import
-
+import "weapon-roulette/src/infrastructure"
 
 func main() {
 	db := infrastructure.NewDB()
 
-	r := infrastructure.NewRouting()
+	r := infrastructure.NewRouting(db)
 	r.Run(r.Port)
 }

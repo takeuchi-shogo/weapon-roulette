@@ -1,5 +1,11 @@
 package product
 
+import (
+	"weapon-roulette/src/interface/controllers"
+	"weapon-roulette/src/interface/database"
+	"weapon-roulette/src/usecase/product"
+)
+
 type WeaponsController struct {
 	Interactor product.WeaponInteractor
 }
@@ -17,7 +23,7 @@ func (controller *WeaponsController) GetList(c controllers.Context) {
 
 	key := c.Query("key")
 
-	wepons, res := controller.Interactor.GetList(key)
+	weapons, res := controller.Interactor.GetList(key)
 
 	if res.Error != nil {
 		c.JSON(res.StatusCode, controllers.NewH(res.Error.Error(), nil))

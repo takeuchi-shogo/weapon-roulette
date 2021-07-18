@@ -1,6 +1,10 @@
-package infrastrcture
+package infrastructure
 
-import "github.com/gin-gonic/gin"
+import (
+	"weapon-roulette/src/interface/controllers/product"
+
+	"github.com/gin-gonic/gin"
+)
 
 type Routing struct {
 	DB   *DB
@@ -11,7 +15,8 @@ type Routing struct {
 func NewRouting(db *DB) *Routing {
 	c := NewConfig()
 	r := &Routing{
-		DB: db,
+		DB:   db,
+		Port: c.Routing.Port,
 	}
 
 	r.setRouting()
@@ -27,6 +32,10 @@ func (r *Routing) setRouting() {
 		/*
 		* roulette
 		 */
-		v1.GET("/roulette", func(c *gin.Context) { eaponsController.GetList(c) })
+		v1.GET("/roulette", func(c *gin.Context) { weaponsController.GetList(c) })
 	}
+}
+
+func (r *Routing) Run(port string) {
+	r.Gin.Run(port)
 }
